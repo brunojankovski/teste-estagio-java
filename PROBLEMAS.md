@@ -1,30 +1,51 @@
-#PROBLEMAS
+public class Imc {
+	public static void main(String[] args) {
 
+		Float peso;
+		Float altura;
+		Float imc;
+		
+		//tirei o objeto e chamei a classe console direto para ler os dados
+		
+		
 
-Este teste consiste em inicialmente seguir todo o passo a passo do [README](https://github.com/FourItil/teste-estagio-java/blob/master/README.md) e a resolução dos itens abaixo.
+        // Ler a entrada dos dados
+		String nome = Console.readString("Informe seu nome: ");
+		peso = Console.readFloat("Informe o seu peso: ");  
+		altura = Console.readFloat("Informe a sua altura: ");
+        // Realizar o cálculo do IMC
+		 imc = peso / (altura * altura); // realizei o calculo como deve ser feito
 
+        // Exibir IMC
+	      System.out.printf("\n------------------------------"); // exibi a tabela como dito no problema 3
+	      System.out.printf("\nAbaixo de 17 - Muito abaixo do peso");
+	      System.out.printf("\nEntre 17 e 18,49 -  Abaixo do peso");
+	      System.out.printf("\nEntre 18,5 e 24,99 -  Peso Normal");
+	      System.out.printf("\nEntre 25 e 29,99 -  Acima do peso");
+	      System.out.printf("\nEntre 30 e 34,99 -  Obesidade I");
+	      System.out.printf("\nEntre 35 e 39,99 -  Obesidade II (Severa)");
+	      System.out.printf("\nAcima de 40 -  Obesidade III (Mórbita)");
+	      System.out.printf("\n------------------------------");
+	      System.out.printf("\nIMC = %.2f", imc);
+	      // mostrei ao usuário o IMC dele somente com 2 casas decimais 
+	      System.out.println("\n\n");
+        // Exibir situação do usuário
+	      // testei a variável IMC em forma de if else e coloquei a situção do usuário
+	      if (imc < 17 ) {
+	    	  System.out.println("Muito Abaixo do peso");		
+	      }else if (imc <= 18.49) {
+	    	  System.out.println("Abaixo do peso");	
+	      }else if (imc <= 24.99) {
+	    	  System.out.println("Peso Normal");	
+	      }else if (imc <= 29.99) {
+	    	  System.out.println("Acima do peso");
+	      }else if (imc <= 34.99) {
+	    	  System.out.println("Obesidade I");
+	      }else if (imc <= 39.99) {
+	    	  System.out.println("Obesidade II (Severa)");
+	      }else {
+	    	  System.out.println("Obesidade III (Mórbita)");
+	      }
 
-##Problema 1: 
-Resolver o problema de leitura de dados.
-
-> Dica: Para o correto funcionamento do programa o usuário deve informar alguns dados, no entanto você tem um problema a resolver... possibilitar que o usuário do programa digite seus dados. Faça isso utilizando o mecanismo que acreditar mais adequado, pode ser a criação de uma classe para ler os dados, um import ou outro mecanismo que seja capaz de ler o que o usuário digitar.
-
-##Problema 2: 
-Realize o correto tratamento dos tipos de variáveis para a correta atribuição do peso e da altura digitados.
-
->Como bem sabemos, para calcular o IMC se faz necessário trabalhar com valores com pontos flutuantes (Float ou Double). Realize o correto tratamento do que o usuário digitou para que seja possível realizar o cálculo.
-
-##Problema 3:
-Exiba o status do usuário, se está com peso normal, acima, abaixo do peso...
-
->Desenvolva suas habilidades de programação em Java, siga as instruções da tabela abaixo
-
-![tabela imc](https://github.com/FourItil/teste-estagio-java/blob/master/images/tabela-imc.png?raw=true)
-
-Não se esqueça de formatar o resultado para exibir somente 2 (duas) casas decimais. Exemplo:
-Se o resultado for 34.915966 a saída deve ser **34.91**, não precisa arredondar, basta tratar a saída.
-
-###Boa sorte, não se esqueça do prazo, informado no email.
-
-> Written with [StackEdit](https://stackedit.io/).
-
+	}
+}
